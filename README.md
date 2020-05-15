@@ -5,7 +5,7 @@
 The program collects data from the site and displays statistics on price changes. 
 The application is written in [Django](https://www.djangoproject.com/) 3.0.6.
 
-<img src="docs/img/image.jpg">
+<img src="docs/img/image.png">
 
 **Contents**
 

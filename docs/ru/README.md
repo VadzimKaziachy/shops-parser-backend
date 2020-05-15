@@ -5,7 +5,7 @@
 Программа собирает данные с сайта и отображает статистику изменения цен. 
 Приложение написана на [Django](https://www.djangoproject.com/) 3.0.6.
 
-<img src="../img/image.jpg">
+<img src="../img/image.png">
 
 **Содержание**
 
