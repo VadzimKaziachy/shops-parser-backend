@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class='home' style="background-image: url({{ context.image.url }})">
+        <div class="title home__title">{{ context.title }}</div>
+        <div class="description home__description">{{ context.description }}</div>
+        <a href="{% url 'admin:index' %}" class="button home__button">{{ context.text_button }}</a>
+    </div>
+{% endblock %}
+

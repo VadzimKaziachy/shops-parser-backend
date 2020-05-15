@@ -1,0 +1,37 @@
+@import url('fonts.css');
+
+html body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+:root{
+
+    /*      Theme colors        */
+    --white: #ffffff;
+
+    /* gradient color   */
+    --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+    /*      theme font-family   */
+    --Abel: 'Abel', cursive;
+    --Lexend: 'Lexend', cursive;
+    --Livvic : 'Livvic', cursive;
+}
+
+.title {
+  font-family: var(--Abel);;
+  font-size: 1.3rem;
+}
+
+.description {
+  font-family: var(--Lexend);
+  font-size: 2.5rem;
+}
+
+.button {
+  font-family: var(--Livvic);
+  font-size: 1rem;
+}
