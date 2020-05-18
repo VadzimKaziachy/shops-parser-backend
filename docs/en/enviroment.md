@@ -10,6 +10,7 @@ The following variables are available:
 - **COMPOSE_PROJECT_NAME** - sets the project name. This value is prepended along with the service name to the container on start up. 
 For example, if your project name is **myapp** and it includes two services **db** and **web**, 
 then Compose starts containers named **myapp_db_1** and **myapp_web_1** respectively;
+- **COMPOSE_PROJECT_DIR** - path to the project folder;
 - **POSTGRES_DB** - used to define a different name for the default database that is created when the image is first started;
 - **POSTGRES_PORT** - port on which the database will work;
 - **POSTGRES_HOST** - host on which the database will work;
@@ -19,4 +20,6 @@ then Compose starts containers named **myapp_db_1** and **myapp_web_1** respecti
 - **SECRET_KEY** - a secret key for a particular Django installation. 
 This is used to provide cryptographic signing, and should be set to a unique, unpredictable value;
 - **ADMIN_USER_NAME** - username to login to admin panel;
-- **ADMIN_USER_PASSWORD** - admin password.
+- **ADMIN_USER_PASSWORD** - admin password;
+- **REDIS_HOST** - the host running Redis
+- **PARSER_HOST** - The host running parser.
