@@ -10,7 +10,7 @@ The application is written in [Django](https://www.djangoproject.com/) 3.0.6.
 **Contents**
 
 - [Environment variables](docs/en/enviroment.md)
-- [Setup with Virtualenv](docs/en/virtualenv.md)
+- [First start](docs/en/first_start.md)
 - [Setup with Docker](docs/en/docker.md)
 - [Swagger](docs/en/swagger.md)
 - [Tests](docs/en/tests.md)

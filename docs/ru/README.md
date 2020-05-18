@@ -10,7 +10,7 @@
 **Содержание**
 
 - [Переменные среды](enviroment.md)
-- [Настройка с помощью Virtualenv](enviroment.md)
+- [Первый старт](first_start.md)
 - [Настройка с помощью Docker](docker.md)
 - [Swagger](swagger.md)
 - [Тесты](tests.md)
