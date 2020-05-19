@@ -4,10 +4,10 @@
 __pycache__
 venv/
 volumes/
+.env
 
 src/media/
 src/static/
 src/celerybeat-schedule
-docker/.env
 
 # Created by .ignore support plugin (hsz.mobi)

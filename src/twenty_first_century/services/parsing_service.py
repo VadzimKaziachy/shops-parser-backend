@@ -11,8 +11,8 @@ from ..models import CategoryModel, ScrapyModel
 class ParsingService(BaseService):
 
     def __init__(self) -> NoReturn:
-        self.spider = 'category',
-        self.project = 'twenty_first_century',
+        self.spider = 'twenty_first_century',
+        self.project = 'shops',
         self.categories = CategoryModel.objects.all()
         self.scrapyd_api = ScrapydAPI(settings.PARSER_URL)
 

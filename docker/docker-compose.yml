@@ -11,7 +11,7 @@ services:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
       - ./nginx/uwsgi_params:/etc/nginx/conf.d/uwsgi_params
     ports:
-      - 8000:8000
+      - 8001:8001
     depends_on:
       - postgres
       - backend
@@ -33,7 +33,7 @@ services:
     volumes:
       - ../:${COMPOSE_PROJECT_DIR}
     expose:
-      - 8001
+      - 8000
     depends_on:
       - postgres
 

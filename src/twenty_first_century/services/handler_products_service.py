@@ -17,7 +17,6 @@ class HandlerProductsService(BaseService):
     def start(self) -> NoReturn:
         if self.scrapy_objects.exists():
             scrapy_object = self.scrapy_objects.first()
-            print(scrapy_object.data)
             for new_product in scrapy_object.data:
                 product, is_created = ProductModel.objects.get_or_create(
                     name=new_product.get('name'),
@@ -29,3 +28,5 @@ class HandlerProductsService(BaseService):
                 self.parser_products.append(ParserProductModel(product=product, price=float(new_product.get('price'))))
 
             ParserProductModel.objects.bulk_create(self.parser_products)
+
+            scrapy_object.delete()
