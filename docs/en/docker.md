@@ -18,3 +18,6 @@ Next, run the project using Docker:
     docker-compose up --build -d
     
 After that open your browser and go to **http:localhost:8000**
+
+Also, for the application to work, you will need [shops-parser](https://github.com/VadzimKaziachy/shops-parser).
+You can read about how to install [shops-parser](https://github.com/VadzimKaziachy/shops-parser) [here](https://github.com/VadzimKaziachy/shops-parser/blob/master/docs/ru/README.md).

@@ -18,3 +18,6 @@
     docker-compose up --build -d
     
 После этого откройте ваш браузер и перейдите на **http:localhost:8000**
+
+Так же для работы приложения вам понадобится [shops-parser](https://github.com/VadzimKaziachy/shops-parser).
+О том как установить [shops-parser](https://github.com/VadzimKaziachy/shops-parser) вы можете прочитать [тут](https://github.com/VadzimKaziachy/shops-parser/blob/master/docs/ru/README.md).

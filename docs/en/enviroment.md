@@ -3,7 +3,7 @@
 [Русский](../ru/enviroment.md) | **English**
 
 Part of the project settings is taken from environment variables. 
-To define them, create the **.env** file in the docker folder and write the data there in this format: **VARIABLE = value**.
+To define them, create a **.env** file next to **docker-compose.yml** and write the data there in this format: **VARIABLE=value**.
 
 The following variables are available:
 
