@@ -1,4 +1,5 @@
 from django.db import models
+from .managers import HomeManager
 
 
 class HomeModel(models.Model):
@@ -6,6 +7,8 @@ class HomeModel(models.Model):
     image = models.ImageField(verbose_name='Background image')
     text_button = models.CharField(verbose_name='Text button', max_length=50)
     description = models.CharField(verbose_name='Description', max_length=200)
+
+    objects = HomeManager()
 
     def __str__(self):
         return self.title

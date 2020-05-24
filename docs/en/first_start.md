@@ -1,4 +1,4 @@
-# Local development
+# First start
 
 [Русский](../ru/first_start.md) | **English**
 
