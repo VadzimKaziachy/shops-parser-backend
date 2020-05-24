@@ -28,7 +28,7 @@ services:
     working_dir: ${COMPOSE_PROJECT_DIR}/src
     env_file: .env
     entrypoint:
-      - ../docker/backend/wait-for-it.sh
+      - ../docker/backend/wait-for-postgres.sh
       - ../docker/backend/entrypoint.sh
     volumes:
       - ../:${COMPOSE_PROJECT_DIR}

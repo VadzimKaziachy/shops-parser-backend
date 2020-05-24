@@ -1,12 +1,10 @@
 from django.views import generic
 
-from .services.home_service import HomeService
+from .models import HomeModel
 
 
-class HomeView(generic.ListView):
+class HomeView(generic.TemplateView):
     template_name = 'home/home_page.html'
-    context_object_name = 'context'
 
-    def get_queryset(self):
-        home_service = HomeService()
-        return home_service.get_home_page()
+    def get_context_data(self, **kwargs):
+        return HomeModel.objects.get_first_model_to_dict()
