@@ -9,6 +9,9 @@ from ..models import CategoryModel, ScrapyModel
 
 
 class ParsingService(BaseService):
+    """
+    A class launches a parser from each category.
+    """
 
     def __init__(self) -> NoReturn:
         self.spider = 'twenty_first_century',

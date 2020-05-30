@@ -8,11 +8,20 @@ from .services.handler_products_service import HandlerProductsService
 
 @shared_task
 def start_parsing_shop():
+    """
+    Task for start parser shop.
+    :return: not return
+    """
     parsing_service = ParsingService()
     parsing_service.start()
 
 
 @app.task
 def start_handler_product(pk: int):
+    """
+    Task for handler products.
+    :param pk: int
+    :return: not return
+    """
     handler_products_service = HandlerProductsService(pk=pk)
     handler_products_service.start()
