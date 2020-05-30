@@ -9,6 +9,9 @@ from ..models import (
 
 
 class HandlerProductsService(BaseService):
+    """
+    The class processes data from the store.
+    """
 
     def __init__(self, pk: int) -> NoReturn:
         self.parser_products = list()

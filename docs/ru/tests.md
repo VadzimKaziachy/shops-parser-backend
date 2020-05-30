@@ -7,7 +7,7 @@
 * [pip3](https://github.com/pypa/pip)
 * [Python 3.7](https://www.ics.uci.edu/~pattis/common/handouts/pythoneclipsejava/python.html)
 
-Для тестирования используется библиотека Coverage. Для запуска тестов запустите команду в папке [web](../../src/web).
+Для тестирования используется библиотека Coverage. Для запуска тестов запустите команду в папке [src](../../src).
 
      coverage run --source='.' manage.py test the-app-you-want-to-test
 Эта **команда** заполнит покрытие, расположенное в **COVERAGE_FILE**, а затем вы можете увидеть результаты или отчет.

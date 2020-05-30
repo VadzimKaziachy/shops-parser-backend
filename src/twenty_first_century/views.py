@@ -20,6 +20,9 @@ from .serializers import (
 
 
 class ScrapyView(UpdateAPIView):
+    """
+    Class for saving data from the parser container.
+    """
     queryset = ScrapyModel.objects.all()
     serializer_class = ScrapySerializer
     lookup_field = 'job_id'
@@ -27,28 +30,43 @@ class ScrapyView(UpdateAPIView):
 
 
 class CategoriesView(ListAPIView):
+    """
+    Class that return a list of categories.
+    """
     queryset = CategoryModel.objects.all()
     serializer_class = CategorySerializer
     pagination_class = ProductsPagination
 
 
 class CategoryView(RetrieveAPIView):
+    """
+    Class that return categories by pk.
+    """
     queryset = CategoryModel.objects.all()
     serializer_class = CategorySerializer
 
 
 class ProductsView(ListAPIView):
+    """
+    Class that return a list of products.
+    """
     queryset = ProductModel.objects.all()
     serializer_class = ProductSerializer
     pagination_class = ProductsPagination
 
 
 class ProductView(RetrieveAPIView):
+    """
+    Class that return product by pk.
+    """
     queryset = ProductModel.objects.all()
     serializer_class = ProductSerializer
 
 
 class ParserProductView(ListAPIView):
+    """
+    Class that return a list parser product.
+    """
     queryset = ParserProductModel.objects.all()
     serializer_class = ParserProductSerializer
     pagination_class = ProductsPagination
