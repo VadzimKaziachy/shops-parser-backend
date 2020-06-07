@@ -1,3 +1,4 @@
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import (
     ListAPIView,
     UpdateAPIView,
@@ -36,6 +37,7 @@ class CategoriesView(ListAPIView):
     queryset = CategoryModel.objects.all()
     serializer_class = CategorySerializer
     pagination_class = ProductsPagination
+    permission_classes = [IsAuthenticated]
 
 
 class CategoryView(RetrieveAPIView):
@@ -44,6 +46,7 @@ class CategoryView(RetrieveAPIView):
     """
     queryset = CategoryModel.objects.all()
     serializer_class = CategorySerializer
+    permission_classes = [IsAuthenticated]
 
 
 class ProductsView(ListAPIView):
@@ -53,6 +56,7 @@ class ProductsView(ListAPIView):
     queryset = ProductModel.objects.all()
     serializer_class = ProductSerializer
     pagination_class = ProductsPagination
+    permission_classes = [IsAuthenticated]
 
 
 class ProductView(RetrieveAPIView):
@@ -61,6 +65,7 @@ class ProductView(RetrieveAPIView):
     """
     queryset = ProductModel.objects.all()
     serializer_class = ProductSerializer
+    permission_classes = [IsAuthenticated]
 
 
 class ParserProductView(ListAPIView):
@@ -70,3 +75,4 @@ class ParserProductView(ListAPIView):
     queryset = ParserProductModel.objects.all()
     serializer_class = ParserProductSerializer
     pagination_class = ProductsPagination
+    permission_classes = [IsAuthenticated]
