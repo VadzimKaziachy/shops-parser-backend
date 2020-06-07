@@ -14,13 +14,13 @@ urlpatterns = [
             url(r'^century/', include('twenty_first_century.urls')),
             url(r'^rest-auth/', include(
                 [
-                    url(r'^', include('rest_auth.urls')),
                     url(r'^registration/', include(
                         [
-                            url(r'^', include('rest_auth.registration.urls')),
                             url(r'^account-confirm-email/(?P<key>[-:\w]+)/$', ConfirmEmailView.as_view()),
+                            url(r'^', include('rest_auth.registration.urls')),
                         ]
                     )),
+                    url(r'^', include('rest_auth.urls')),
                 ]
             )),
         ]

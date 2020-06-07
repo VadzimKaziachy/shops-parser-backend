@@ -56,7 +56,6 @@ INSTALLED_APPS = [
 
     'home.apps.HomeConfig',
     'twenty_first_century.apps.TwentyFirstCenturyConfig',
-    # 'user.apps.UserConfig',
 ]
 
 SITE_ID = 1
