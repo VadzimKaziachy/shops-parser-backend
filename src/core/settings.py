@@ -44,12 +44,24 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_celery_results',
+
     'rest_framework',
     'rest_framework_swagger',
+    'rest_framework.authtoken',
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
 
     'home.apps.HomeConfig',
     'twenty_first_century.apps.TwentyFirstCenturyConfig',
+    # 'user.apps.UserConfig',
 ]
+
+SITE_ID = 1
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
@@ -65,7 +77,10 @@ SWAGGER_SETTINGS = {
 }
 
 REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 }
 
 MIDDLEWARE = [

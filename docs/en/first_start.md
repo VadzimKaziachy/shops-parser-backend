@@ -32,11 +32,11 @@ You can read how to configure the environment variable file in the section [Envi
 After everything has been configured, you can start the project. The first thing you need to do is perform migrations
 to set up a database:
 
-    pipenv run python manage.py migrate
+    python manage.py migrate
 
 After all the above has been done, you can run project. To do this, run the command below,
 it will allow you to run the project:
 
-    pipenv run python manage.py runserver
+    python manage.py runserver
 
 Now open the project in the [browser](http://localhost:8000).
