@@ -4,7 +4,9 @@ from django.urls import path, include
 
 from allauth.account.views import ConfirmEmailView
 
-from rest_framework_swagger.views import get_swagger_view
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,7 +32,20 @@ urlpatterns = [
 if settings.DEBUG:
     from django.conf.urls.static import static
 
+    schema_view = get_schema_view(
+        openapi.Info(
+            title="Shops parser API",
+            default_version='v1',
+            description="API for Shops parser app",
+        ),
+        public=True,
+        permission_classes=(permissions.AllowAny,),
+    )
+
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-    # Swagger
-    urlpatterns += [path('swagger-ui/', get_swagger_view(title='Shops-parser-backend API'))]
+
+    urlpatterns += [
+        path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    ]
+
