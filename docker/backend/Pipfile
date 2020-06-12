@@ -9,7 +9,6 @@ uWSGI = "==2.0.18"
 [packages]
 Django = "==3.0.7"
 django-environ = "==0.4.5"
-django-rest-swagger = "==2.2.0"
 djangorestframework = "==3.11.0"
 django-celery-results = "==1.2.1"
 django-rest-auth = {extras = ["with_social"],version = "==0.9.5"}
@@ -19,6 +18,7 @@ celery = "==4.4.4"
 python-scrapyd-api = "==2.1.2"
 Pillow = "==7.1.2"
 coverage = "==5.1"
+drf-yasg = "==1.17.1"
 
 [requires]
 python_version = "3.7"

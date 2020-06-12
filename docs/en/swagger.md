@@ -8,5 +8,5 @@ it is available only in development mode (**DEBUG=true**).
 To see the list of available **API**, follow the link:
 
 ```djangourlpath
-http://localhost:8000/swagger-ui/
+http://localhost:8000/swagger/
 ```

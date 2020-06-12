@@ -46,13 +46,14 @@ INSTALLED_APPS = [
     'django_celery_results',
 
     'rest_framework',
-    'rest_framework_swagger',
     'rest_framework.authtoken',
     'rest_auth',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'rest_auth.registration',
+
+    'drf_yasg',
 
     'home.apps.HomeConfig',
     'twenty_first_century.apps.TwentyFirstCenturyConfig',

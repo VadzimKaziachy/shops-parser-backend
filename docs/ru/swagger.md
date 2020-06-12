@@ -8,5 +8,5 @@
 Что бы увидеть список доступного **API** перейдите по ссылку:
 
 ```djangourlpath
-http://localhost:8000/swagger-ui/
+http://localhost:8000/swagger/
 ```
