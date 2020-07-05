@@ -9,4 +9,9 @@ class HomeManager(models.Manager):
     Manager for HomeModel.
     """
     def get_first_object_to_dict(self):
+        """
+        A way to get a dict from the first object.
+        :raise Http404 or ValueError
+        :return: dict
+        """
         return model_to_dict(get_object_or_404(self.get_queryset()))

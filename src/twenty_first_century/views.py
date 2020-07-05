@@ -1,11 +1,14 @@
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import (
+    IsAuthenticated,
+)
 from rest_framework.generics import (
     ListAPIView,
     UpdateAPIView,
     RetrieveAPIView
 )
-
-from core.utils import ProductsPagination
+from core.utils import (
+    ProductsPagination,
+)
 from .models import (
     ScrapyModel,
     ProductModel,
