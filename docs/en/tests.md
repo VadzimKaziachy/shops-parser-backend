@@ -5,7 +5,7 @@
 ### Dependencies
 
 * [pip3](https://github.com/pypa/pip)
-* [Python 3.7](https://www.ics.uci.edu/~pattis/common/handouts/pythoneclipsejava/python.html)
+* [Python 3.8](https://www.ics.uci.edu/~pattis/common/handouts/pythoneclipsejava/python.html)
 
 For testing, the Coverage library is used.  To run the tests, run the command in the [src](../../src) folder.
 
