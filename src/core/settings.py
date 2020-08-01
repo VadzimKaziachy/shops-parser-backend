@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_celery_results',
 
-    'django_filters',
     'rest_framework',
     'rest_framework.authtoken',
     'rest_auth',
@@ -55,6 +54,7 @@ INSTALLED_APPS = [
     'rest_auth.registration',
 
     'drf_yasg',
+    'service_objects',
 
     'home.apps.HomeConfig',
     'twenty_first_century.apps.TwentyFirstCenturyConfig',
@@ -68,10 +68,17 @@ SWAGGER_SETTINGS = {
     'SECURITY_DEFINITIONS': {
         'basic': {
             'type': 'basic'
+        },
+        'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
         }
     },
     'SUPPORTED_SUBMIT_METHODS': [
         'get',
+        'patch',
+        'post',
     ],
     'JSON_EDITOR': True,
     'SHOW_REQUEST_HEADERS': True

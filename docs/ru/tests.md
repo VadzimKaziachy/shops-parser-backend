@@ -5,7 +5,7 @@
 ### Зависимости
 
 * [pip3](https://github.com/pypa/pip)
-* [Python 3.7](https://www.ics.uci.edu/~pattis/common/handouts/pythoneclipsejava/python.html)
+* [Python 3.8](https://www.ics.uci.edu/~pattis/common/handouts/pythoneclipsejava/python.html)
 
 Для тестирования используется библиотека Coverage. Для запуска тестов запустите команду в папке [src](../../src).
 

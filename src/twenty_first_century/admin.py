@@ -22,7 +22,7 @@ class ParserProductAdmin(admin.ModelAdmin):
     """
     Class implementing interface for ParserProductModel in admin panel.
     """
-    list_display = ('product', 'price', 'date')
+    list_display = ('product', 'price', 'created')
 
 
 admin.site.register(ProductModel, ProductAdmin)

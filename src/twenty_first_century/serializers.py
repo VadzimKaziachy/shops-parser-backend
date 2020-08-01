@@ -35,7 +35,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CategoryModel
-        fields = ('pk', 'name', 'link')
+        fields = ('id', 'name', 'link')
 
 
 class ProductSerializer(serializers.ModelSerializer):
@@ -45,7 +45,7 @@ class ProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ProductModel
-        fields = ('pk', 'name', 'code')
+        fields = ('id', 'name', 'code')
 
 
 class ParserProductSerializer(serializers.ModelSerializer):
@@ -55,4 +55,4 @@ class ParserProductSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = ParserProductModel
-        fields = ('pk', 'date', 'price')
+        fields = ('id', 'created', 'price')
