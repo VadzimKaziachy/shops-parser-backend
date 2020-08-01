@@ -11,4 +11,4 @@ def post_save_profile_model(sender, instance, **kwargs):
     If object have `data`, then started celery task.
     """
     if instance.data:
-        start_handler_product.delay(pk=instance.pk)
+        start_handler_product.delay(id=instance.id)

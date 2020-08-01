@@ -2,8 +2,10 @@ from celery import shared_task
 
 from core.celery import app
 
-from .services.parsing_service import ParsingService
-from .services.handler_products_service import HandlerProductsService
+from .services import (
+    ParsingService,
+    HandlerProductsService,
+)
 
 
 @shared_task
@@ -12,16 +14,14 @@ def start_parsing_shop():
     Task for start parser shop.
     :return: not return
     """
-    parsing_service = ParsingService()
-    parsing_service.start()
+    ParsingService.execute({})
 
 
 @app.task
-def start_handler_product(pk: int):
+def start_handler_product(id: int):
     """
     Task for handler products.
-    :param pk: int
+    :param id: int
     :return: not return
     """
-    handler_products_service = HandlerProductsService(pk=pk)
-    handler_products_service.start()
+    HandlerProductsService.execute({'id': id})
