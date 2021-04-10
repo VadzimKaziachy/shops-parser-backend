@@ -53,39 +53,22 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth.registration',
 
-    'drf_yasg',
+    'drf_spectacular',
     'service_objects',
 
     'home.apps.HomeConfig',
-    'twenty_first_century.apps.TwentyFirstCenturyConfig',
+    'providers.apps.ProvidersConfig',
+    'categories.apps.CategoriesConfig',
+    'products.apps.ProductsConfig',
 ]
 
 SITE_ID = 1
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-SWAGGER_SETTINGS = {
-    'SECURITY_DEFINITIONS': {
-        'basic': {
-            'type': 'basic'
-        },
-        'Bearer': {
-            'type': 'apiKey',
-            'name': 'Authorization',
-            'in': 'header'
-        }
-    },
-    'SUPPORTED_SUBMIT_METHODS': [
-        'get',
-        'patch',
-        'post',
-    ],
-    'JSON_EDITOR': True,
-    'SHOW_REQUEST_HEADERS': True
-}
 
 REST_FRAMEWORK = {
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ],
