@@ -161,7 +161,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Celery
-CELERY_BROKER_URL = 'redis://{host}:6379'.format(host=env('REDIS_HOST'))
+CELERY_BROKER_URL = f'pyamqp://guest@{env("REDIS_HOST")}/shops_parser'
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_BACKEND = 'django-db'
