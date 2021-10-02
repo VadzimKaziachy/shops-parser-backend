@@ -9,9 +9,9 @@ class CategoryModel(models.Model):
         return self.name
 
     class Meta:
-        ordering = ('created',)
-        verbose_name = 'Category'
-        verbose_name_plural = 'Categories'
+        ordering = ("created",)
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"
 
 
 class ProviderCategoryModel(models.Model):
@@ -25,6 +25,6 @@ class ProviderCategoryModel(models.Model):
         return self.provider.name
 
     class Meta:
-        ordering = ('created',)
+        ordering = ("created",)
         verbose_name = "Provider category"
         verbose_name_plural = "Provider categories"

@@ -10,6 +10,6 @@ class ProviderModel(models.Model):
         return self.name
 
     class Meta:
-        ordering = ('created',)
-        verbose_name = 'Provider'
-        verbose_name_plural = 'Providers'
+        ordering = ("created",)
+        verbose_name = "Provider"
+        verbose_name_plural = "Providers"

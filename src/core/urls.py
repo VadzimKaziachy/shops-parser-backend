@@ -1,43 +1,47 @@
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path, include
-
-from allauth.account.views import ConfirmEmailView
-
-from rest_framework import permissions
-
-from drf_spectacular.views import (
-    SpectacularAPIView,
-    SpectacularSwaggerView,
-)
+from django.urls import include
+from django.urls import path
+from drf_spectacular.views import SpectacularAPIView
+from drf_spectacular.views import SpectacularSwaggerView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(
-        [
-            path('products/', include('products.urls')),
-            path('providers/', include('providers.urls')),
-            path('categories/', include('categories.urls')),
-            # path('rest-auth/', include(
-            #     [
-            #         path('registration/', include(
-            #             [
-            #                 path('account-confirm-email/<str:key>/', ConfirmEmailView.as_view()),
-            #                 path('', include('rest_auth.registration.urls')),
-            #             ]
-            #         )),
-            #         path('', include('rest_auth.urls')),
-            #     ]
-            # )),
-            path('schema/', include(
-                [
-                    path('swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
-                    path('', SpectacularAPIView.as_view(), name='schema'),
-                ]
-            )),
-        ]
-    )),
-    path('', include('home.urls')),
+    path("admin/", admin.site.urls),
+    path(
+        "api/",
+        include(
+            [
+                path("products/", include("products.urls")),
+                path("providers/", include("providers.urls")),
+                path("categories/", include("categories.urls")),
+                # path('rest-auth/', include(
+                #     [
+                #         path('registration/', include(
+                #             [
+                #                 path('account-confirm-email/<str:key>/', ConfirmEmailView.as_view()),
+                #                 path('', include('rest_auth.registration.urls')),
+                #             ]
+                #         )),
+                #         path('', include('rest_auth.urls')),
+                #     ]
+                # )),
+                path(
+                    "schema/",
+                    include(
+                        [
+                            path(
+                                "swagger-ui/",
+                                SpectacularSwaggerView.as_view(url_name="schema"),
+                                name="swagger-ui",
+                            ),
+                            path("", SpectacularAPIView.as_view(), name="schema"),
+                        ]
+                    ),
+                ),
+            ]
+        ),
+    ),
+    path("", include("home.urls")),
 ]
 
 if settings.DEBUG:

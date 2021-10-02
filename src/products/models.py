@@ -1,5 +1,5 @@
-from django.db import models
 from django.core.validators import MinValueValidator
+from django.db import models
 
 
 class ProductModel(models.Model):
@@ -11,9 +11,9 @@ class ProductModel(models.Model):
         return self.name
 
     class Meta:
-        ordering = ('id', )
-        verbose_name = 'Product'
-        verbose_name_plural = 'Products'
+        ordering = ("id",)
+        verbose_name = "Product"
+        verbose_name_plural = "Products"
 
 
 class ProviderProductModel(models.Model):
@@ -30,9 +30,9 @@ class ProviderProductModel(models.Model):
         return self.name
 
     class Meta:
-        ordering = ('id',)
-        verbose_name = 'Provider product'
-        verbose_name_plural = 'Provider products'
+        ordering = ("id",)
+        verbose_name = "Provider product"
+        verbose_name_plural = "Provider products"
 
 
 # Create your models here.

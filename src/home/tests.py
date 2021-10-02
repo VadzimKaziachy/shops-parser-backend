@@ -1,5 +1,5 @@
-from django.urls import reverse
 from django.test import TestCase
+from django.urls import reverse
 
 
 class HomeViewTests(TestCase):
@@ -11,7 +11,7 @@ class HomeViewTests(TestCase):
         """
         Test for check work HomeView.
         """
-        response = self.client.get(reverse('home:home'))
+        response = self.client.get(reverse("home:home"))
 
         self.assertEqual(response.status_code, 200)
         self.assertQuerysetEqual(response.template_name, ["'home/home_page.html'"])

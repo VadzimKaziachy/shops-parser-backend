@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "shops-parser-backend"
+version = "0.1.0"
+description = ""
+authors = ["vadim.koziachiy <vadim.koziachiy@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+Django = "*"
+django-environ = "*"
+djangorestframework = "*"
+django-celery-results = "*"
+django-service-objects = "*"
+psycopg2-binary = "*"
+redis = "*"
+celery = "*"
+python-scrapyd-api = "*"
+Pillow = "*"
+coverage = "*"
+drf-yasg = "*"
+future = "*"
+drf-spectacular = "^0.20.0"
+
+[tool.poetry.dev-dependencies]
+uWSGI = "==2.0.19.1"
+black = "==21.9b0"
+reorder-python-imports = "*"
+pylint = "*"
+pycln = {git = "https://github.com/hadialqattan/pycln"}
+pre-commit = "^2.15.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
