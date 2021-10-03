@@ -3,7 +3,7 @@
 [Русский](docs/ru/README.md) | **English**
 
 The program collects data from the site and displays statistics on price changes. 
-The application is written in [Django](https://www.djangoproject.com/) 3.0.8.
+The application is written in [Django](https://www.djangoproject.com/).
 
 <img src="docs/img/image.png">
 

@@ -1,7 +1,7 @@
-FROM python:3.8
+FROM python:3.9
 
-COPY Pipfile ./
-COPY Pipfile.lock ./
+COPY ../../src/Pipfile ./
+COPY ../../src/Pipfile.lock ./
 
 RUN apt-get update && \
     apt-get install -y postgresql-client && \
