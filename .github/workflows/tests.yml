@@ -25,10 +25,11 @@ jobs:
     - name: Install poetry
       run: pip install -U pip setuptools poetry
     
+    - name: Open home dir
+      run: cd src/
+    
     - name: Install Dependencies
-      run: |
-        cd src/
-        poetry install
+      run: poetry install
     
     - name: Run Tests
       run: python manage.py test
