@@ -54,7 +54,6 @@ INSTALLED_APPS = [
     "allauth.account",
     "rest_auth.registration",
     "drf_spectacular",
-    "service_objects",
     "home.apps.HomeConfig",
     "providers.apps.ProvidersConfig",
     "categories.apps.CategoriesConfig",
@@ -102,6 +101,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "core.wsgi.application"
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "Shop parser backend",
+    "VERSION": "0.0.1",
+    "SCHEMA_PATH_PREFIX": r"/api/",
+}
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
@@ -164,3 +169,5 @@ CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_BACKEND = "django-db"
 
 PARSER_URL = "http://{host}:6800".format(host=env("PARSER_HOST"))
+
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"

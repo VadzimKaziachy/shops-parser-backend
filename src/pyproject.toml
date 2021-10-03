@@ -8,18 +8,14 @@ authors = ["vadim.koziachiy <vadim.koziachiy@gmail.com>"]
 python = ">=3.9,<3.10"
 Django = "*"
 django-environ = "*"
+django-rest-auth = {extras = ["with_social"], version = "*"}
 djangorestframework = "*"
 django-celery-results = "*"
-django-service-objects = "*"
-psycopg2-binary = "*"
-redis = "*"
+psycopg2 = "*"
 celery = "*"
 python-scrapyd-api = "*"
-Pillow = "*"
-coverage = "*"
-drf-yasg = "*"
-future = "*"
 drf-spectacular = "^0.20.0"
+Pillow = "^8.3.2"
 
 [tool.poetry.dev-dependencies]
 uWSGI = "==2.0.19.1"

@@ -1,16 +1,12 @@
 from django.test import TestCase
 from django.urls import reverse
+from home.models import HomeModel
 
 
 class HomeViewTests(TestCase):
-    """
-    Class which testing HomeView.
-    """
-
     def test_get_queryset(self):
-        """
-        Test for check work HomeView.
-        """
+        # HomeModel.objects.create(title=)
+
         response = self.client.get(reverse("home:home"))
 
         self.assertEqual(response.status_code, 200)

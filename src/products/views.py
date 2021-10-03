@@ -7,6 +7,7 @@ from products.models import ProductModel
 from products.serializers import DetailProductSerializer
 from products.serializers import ProductSerializer
 from rest_framework import generics
+from rest_framework import permissions
 from rest_framework import status
 
 
@@ -21,7 +22,7 @@ class ProductsView(generics.ListAPIView):
     queryset = ProductModel.objects.all()
     serializer_class = ProductSerializer
     pagination_class = ProductsPagination
-    # permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated,)
 
 
 @extend_schema(
@@ -40,5 +41,5 @@ class ProductsView(generics.ListAPIView):
 class ProductView(generics.RetrieveAPIView):
     queryset = ProductModel.objects.all()
     serializer_class = DetailProductSerializer
-    # permission_classes = (permissions.IsAuthenticated,)
+    permission_classes = (permissions.IsAuthenticated,)
     lookup_field = "id"
