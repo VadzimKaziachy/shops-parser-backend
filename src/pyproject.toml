@@ -14,13 +14,13 @@ django-celery-results = "*"
 psycopg2 = "*"
 celery = "*"
 python-scrapyd-api = "*"
-drf-spectacular = "^0.20.0"
-Pillow = "^8.3.2"
+drf-spectacular = "*"
+Pillow = "*"
+uWSGI = "*"
 
 [tool.poetry.dev-dependencies]
-uWSGI = "==2.0.19.1"
-black = "==21.9b0"
-pre-commit = "^2.15.0"
+black = "*"
+pre-commit = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
