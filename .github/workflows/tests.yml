@@ -39,9 +39,9 @@ jobs:
         cd src/
         poetry install
 
-#    - name: Run Tests
-#      run: python src/manage.py test
-#      env:
-#        DB: ${{ matrix.db }}
-#        DB_USER: ${{ matrix.db_user }}
-#        DB_PASSWORD: ${{ matrix.db_password }}
+    - name: Run Tests
+      run: python src/manage.py test
+      env:
+        DB: ${{ matrix.db }}
+        DB_USER: ${{ matrix.db_user }}
+        DB_PASSWORD: ${{ matrix.db_password }}
