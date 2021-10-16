@@ -20,9 +20,6 @@ Pillow = "^8.3.2"
 [tool.poetry.dev-dependencies]
 uWSGI = "==2.0.19.1"
 black = "==21.9b0"
-reorder-python-imports = "*"
-pylint = "*"
-pycln = {git = "https://github.com/hadialqattan/pycln"}
 pre-commit = "^2.15.0"
 
 [build-system]
