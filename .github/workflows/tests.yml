@@ -41,6 +41,6 @@ jobs:
     - name: Run Tests
       run: python src/manage.py test
       env:
-        DB: parser-db
-        DB_USER: parser-admin
-        DB_PASSWORD: parser-password
+        POSTGRES_DB: parser-db
+        POSTGRES_USER: parser-admin
+        POSTGRES_PASSWORD: parser-password
