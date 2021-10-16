@@ -12,10 +12,9 @@ jobs:
         image: postgres:11
         env:
           POSTGRES_USER: parser-admin
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: parser-password
-        ports: [ '5432:5432' ]
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+          POSTGRES_PASSWORD: parser-password
+          POSTGRES_DB: parser-db
+        ports: ['5432:5432']
 
     steps:
     - uses: actions/checkout@v2
@@ -42,6 +41,6 @@ jobs:
     - name: Run Tests
       run: python src/manage.py test
       env:
-        DB: ${{ matrix.db }}
-        DB_USER: ${{ matrix.db_user }}
-        DB_PASSWORD: ${{ matrix.db_password }}
+        DB: parser-db
+        DB_USER: parser-admin
+        DB_PASSWORD: parser-password
