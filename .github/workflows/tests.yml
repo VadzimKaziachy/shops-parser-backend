@@ -9,12 +9,12 @@ jobs:
     strategy:
       max-parallel: 4
       matrix:
-#        db: [postgres]
+        db: [postgres]
         python-version: [3.9]
-#        include:
-#          - db: shops_parser
-#            db_user: parser-admin
-#            db_password: parser-password
+        include:
+          - db: shops_parser
+            db_user: parser-admin
+            db_password: parser-password
 
     steps:
     - uses: actions/checkout@v2
