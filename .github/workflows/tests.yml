@@ -53,8 +53,12 @@ jobs:
         cd src/
         poetry install --no-interaction --no-root
 
+    - name: test
+      run: ls -la
+
     - name: Run Tests
-      run:
+      run: |
+        source .venv/bin/activate
         python src/manage.py test
       env:
         POSTGRES_DB: shops_parser_db
