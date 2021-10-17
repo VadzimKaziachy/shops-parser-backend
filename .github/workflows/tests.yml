@@ -48,7 +48,9 @@ jobs:
       run: pwd
 
     - name: poetry
-      run: poetry show --tree
+      run: |
+        cd src/
+        poetry show --tree
 
     - name: Run Tests
       run: python src/manage.py test
