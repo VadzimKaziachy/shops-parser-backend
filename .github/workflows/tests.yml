@@ -36,13 +36,16 @@ jobs:
     - name: Install poetry
       run: pip install -U pip setuptools poetry
 
-    - name: Install Dependencies
+    - name: Create requirements.txt
       run: |
         cd src/
-        poetry install
+        poetry export -f requirements.txt --output requirements.txt
 
-    - name: Check library
-      run: pip list
+    - name: Install library
+      run: |
+        cd src/
+        pip install requirements.txt
+
 
     - name: Run Tests
       run: python src/manage.py test
