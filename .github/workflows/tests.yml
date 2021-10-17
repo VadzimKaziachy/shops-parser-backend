@@ -46,6 +46,11 @@ jobs:
         cd src/
         poetry install
 
+    - name: Shell
+      run: |
+        cd src/
+        poetry shell
+
     - name: Run Tests
       run: python src/manage.py test
       env:
