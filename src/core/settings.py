@@ -11,14 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 import os
 
-import environ
-
-root = environ.Path(__file__) - 3
-env = environ.Env(
-    DEBUG=(bool, False),
-)
-environ.Env.read_env(env_file=os.path.join(os.path.join(root.root, "docker", ".env")))
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,13 +18,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = os.getenv(
+    "SECRET_KEY", "&3=_pz5u+!8^w94usm09p)*-@x3z=r_(=o7y4*(w26@1r-dbw^"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env("DEBUG")
+DEBUG = os.getenv("POSTGRES_DB", True)
 
-ADMIN_USER_NAME = env("ADMIN_USER_NAME")
-ADMIN_USER_PASSWORD = env("ADMIN_USER_PASSWORD")
+ADMIN_USER_NAME = os.getenv("ADMIN_USER_NAME", "admin")
+ADMIN_USER_PASSWORD = os.getenv("ADMIN_USER_PASSWORD", "password")
 
 ALLOWED_HOSTS = ["django", "127.0.0.1", "localhost", "nginx"]
 
@@ -114,11 +108,11 @@ SPECTACULAR_SETTINGS = {
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": env("POSTGRES_DB"),
-        "USER": env("POSTGRES_USER"),
-        "PASSWORD": env("POSTGRES_PASSWORD"),
-        "HOST": env("POSTGRES_HOST"),
-        "PORT": env("POSTGRES_PORT"),
+        "NAME": os.getenv("POSTGRES_DB", "shops_parser_db"),
+        "USER": os.getenv("POSTGRES_USER", "shops_parser_user"),
+        "PASSWORD": os.getenv("POSTGRES_PASSWORD", "shops_parser_password"),
+        "HOST": os.getenv("POSTGRES_HOST", "127.0.0.1"),
+        "PORT": os.getenv("POSTGRES_PORT", "5432"),
     }
 }
 
@@ -162,12 +156,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
+PARSER_HOST = os.getenv("PARSER_HOST", "parser")
+
+REDIS_HOST = os.getenv("REDIS_HOST", "127.0.0.1")
+
 # Celery
-CELERY_BROKER_URL = f'pyamqp://guest@{env("REDIS_HOST")}/shops_parser'
+CELERY_BROKER_URL = f"pyamqp://guest@{REDIS_HOST}/shops_parser"
 CELERY_ACCEPT_CONTENT = ["json"]
 CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_BACKEND = "django-db"
 
-PARSER_URL = "http://{host}:6800".format(host=env("PARSER_HOST"))
+PARSER_URL = "http://{host}:6800".format(host=PARSER_HOST)
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
