@@ -7,7 +7,6 @@ authors = ["vadim.koziachiy <vadim.koziachiy@gmail.com>"]
 [tool.poetry.dependencies]
 python = ">=3.9,<3.10"
 Django = "*"
-django-environ = "*"
 django-rest-auth = {extras = ["with_social"], version = "*"}
 djangorestframework = "*"
 django-celery-results = "*"
