@@ -1,0 +1,11 @@
+Django==3.2.8
+drf_spectacular==0.20.2
+django_allauth==0.45.0
+djangorestframework==3.12.4
+django-rest-auth
+django-celery-results
+psycopg2
+celery
+python-scrapyd-api
+drf-spectacular
+Pillow
