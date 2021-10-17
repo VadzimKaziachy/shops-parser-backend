@@ -53,7 +53,7 @@ jobs:
         poetry show --tree
 
     - name: Run Tests
-      run: python src/manage.py test
+      run: /usr/bin/python src/manage.py test
       env:
         POSTGRES_DB: shops_parser_db
         POSTGRES_USER: shops_parser_user
