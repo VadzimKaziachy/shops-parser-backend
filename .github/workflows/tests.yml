@@ -7,19 +7,13 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    env:
-      POSTGRES_DB: shops_parser_db
-      POSTGRES_USER: shops_parser_user
-      POSTGRES_PASSWORD: shops_parser_password
-      POSTGRES_PORT: 5432
-
     services:
       postgres:
         image: postgres:11
         env:
-          POSTGRES_DB: ${{env.POSTGRES_DB}}
-          POSTGRES_USER: ${{env.POSTGRES_USER}}
-          POSTGRES_PASSWORD: ${{env.shops_parser_password}}
+          POSTGRES_DB: shops_parser_db
+          POSTGRES_USER: shops_parser_user
+          POSTGRES_PASSWORD: shops_parser_password
         ports:
           - 5432:5432
         options: >-
@@ -50,6 +44,6 @@ jobs:
     - name: Run Tests
       run: python src/manage.py test
       env:
-        POSTGRES_DB: $POSTGRES_DB
-        POSTGRES_USER: $POSTGRES_USER
-        POSTGRES_PASSWORD: $POSTGRES_PASSWORD
+        POSTGRES_DB: shops_parser_db
+        POSTGRES_USER: shops_parser_user
+        POSTGRES_PASSWORD: shops_parser_password
