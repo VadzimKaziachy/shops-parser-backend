@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "shops-parser-backend"
+version = "0.1.0"
+description = ""
+authors = ["vadim.koziachiy <vadim.koziachiy@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.10"
+Django = "*"
+django-rest-auth = {extras = ["with_social"], version = "*"}
+djangorestframework = "*"
+django-celery-results = "*"
+psycopg2 = "*"
+celery = "*"
+python-scrapyd-api = "*"
+drf-spectacular = "*"
+Pillow = "*"
+uWSGI = "*"
+
+[tool.poetry.dev-dependencies]
+black = "*"
+pre-commit = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

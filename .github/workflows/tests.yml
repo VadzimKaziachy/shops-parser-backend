@@ -1,0 +1,48 @@
+name: Django tests
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 4
+      matrix:
+        db: [postgres]
+        python-version: [3.9]
+        include:
+          - db: shops_parser
+            db_user: parser-admin
+            db_password: parser-password
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Start PostgreSQL
+      run: |
+        sudo systemctl start postgresql.service
+        sudo -u postgres createuser -s runner
+
+    - name: Upgrade pip
+      run: python -m pip install --upgrade pip
+
+    - name: Install poetry
+      run: pip install -U pip setuptools poetry
+
+    - name: Install Dependencies
+      run: |
+        cd src/
+        poetry install
+
+    - name: Run Tests
+      run: python src/manage.py test
+      env:
+        DB: ${{ matrix.db }}
+        DB_USER: ${{ matrix.db_user }}
+        DB_PASSWORD: ${{ matrix.db_password }}
