@@ -50,6 +50,9 @@ jobs:
         cd src/
         poetry install
 
+    - name: Install Django
+      run: pip install Django
+
     - name: Run Tests
       run: python src/manage.py test
       env:
