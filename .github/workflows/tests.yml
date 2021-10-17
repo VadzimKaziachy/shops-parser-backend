@@ -17,9 +17,9 @@ jobs:
       postgres:
         image: postgres:11
         env:
-          POSTGRES_DB: {{env.POSTGRES_DB}}
-          POSTGRES_USER: {{env.POSTGRES_USER}}
-          POSTGRES_PASSWORD: {{env.shops_parser_password}}
+          POSTGRES_DB: ${{env.POSTGRES_DB}}
+          POSTGRES_USER: ${{env.POSTGRES_USER}}
+          POSTGRES_PASSWORD: ${{env.shops_parser_password}}
         ports:
           - 5432:5432
         options: >-
