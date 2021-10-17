@@ -3,46 +3,45 @@ name: Django tests
 on: [pull_request]
 
 jobs:
-  build:
+  tests:
 
     runs-on: ubuntu-latest
-    strategy:
-      max-parallel: 4
-      matrix:
-        db: [postgres]
-        python-version: [3.9]
-        include:
-          - db: shops_parser
-            db_user: parser-admin
-            db_password: parser-password
+
+    services:
+      postgres:
+        image: postgres:11
+        env:
+          POSTGRES_DB: shops_parser_db
+          POSTGRES_USER: shops_parser_user
+          POSTGRES_PASSWORD: shops_parser_password
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Python ${{ matrix.python-version }}
+    - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}
-
-    - name: Start PostgreSQL
-      run: |
-        sudo systemctl start postgresql.service
-        sudo -u postgres createuser -s runner
+        python-version: 3.9
 
     - name: Upgrade pip
       run: python -m pip install --upgrade pip
 
-    - name: Install poetry
-      run: pip install -U pip setuptools poetry
-
-    - name: Install Dependencies
+    - name: install library
       run: |
         cd src/
-        poetry install
+        pip install requirements.txt
 
     - name: Run Tests
       run: python src/manage.py test
+
       env:
-        DB: ${{ matrix.db }}
-        DB_USER: ${{ matrix.db_user }}
-        DB_PASSWORD: ${{ matrix.db_password }}
+        POSTGRES_DB: shops_parser_db
+        POSTGRES_USER: shops_parser_user
+        POSTGRES_PASSWORD: shops_parser_password
